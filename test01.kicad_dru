@@ -1,5 +1,9 @@
 (version 1)
 
-(rule "rule1"
-	(constraint clearance (min 1mm))
-	(condition "A.NetClass == '/TRACE' && B.Name == 'test'"))
+(rule "Track to Dummy Pad Clearance"
+  (constraint clearance (min 0.3mm))
+  (condition "A.Type == 'Track' && B.Type == 'Pad'"))
+
+(rule "Track to Keepout Line"
+  (constraint clearance (min 1mm))
+  (condition "A.Type == 'Track' && B.Type == 'Keepout'"))
