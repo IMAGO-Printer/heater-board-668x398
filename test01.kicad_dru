@@ -7,3 +7,9 @@
 (rule "Track to Keepout Line"
   (constraint clearance (min 1mm))
   (condition "A.Type == 'Track' && B.Type == 'Keepout'"))
+
+
+(rule "Track Width 0.54mm"
+  (constraint track_width (max 0.54mm))
+  (condition "A.Type == 'Track'"))
+
